@@ -1,4 +1,4 @@
-Package: mlrMBO
+Package: mlrMBO_modified
 Title: Bayesian Optimization and Model-Based Optimization of Expensive Black-Box Functions
 Description: Flexible and comprehensive R toolbox for model-based optimization
     ('MBO'), also known as Bayesian optimization. It implements the Efficient
