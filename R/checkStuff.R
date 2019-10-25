@@ -95,7 +95,7 @@ checkStuff = function(fun, design, learner, control) {
       #Default
       control$save.file.overwrite = F
     }
-    assertPathForOutput(control$save.file.path, overwrite = save.file.overwrite)
+    assertPathForOutput(control$save.file.path, overwrite = control$save.file.overwrite)
   }
   control$store.model.at = coalesce(control$store.model.at, control$iters + 1)
   control$resample.at = coalesce(control$resample.at, integer(0))
