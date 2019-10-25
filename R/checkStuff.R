@@ -91,7 +91,11 @@ checkStuff = function(fun, design, learner, control) {
     warningf("You turned off the final saving of the optimization result at (iter + 1)! Do you really want this?")
   if (length(control$save.on.disk.at) > 0 || is.finite(control$save.on.disk.at.time)) {
     control$save.on.disk.at = asInteger(control$save.on.disk.at, any.missing = FALSE, lower = 0)
-    assertPathForOutput(control$save.file.path)
+    if(is.null(control$save.file.overwrite)){
+      #Default
+      control$save.file.overwrite = F
+    }
+    assertPathForOutput(control$save.file.path, overwrite = save.file.overwrite)
   }
   control$store.model.at = coalesce(control$store.model.at, control$iters + 1)
   control$resample.at = coalesce(control$resample.at, integer(0))
